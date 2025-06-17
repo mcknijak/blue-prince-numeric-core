@@ -20,17 +20,61 @@ The **numeric core** algorithm is a puzzle mechanic from *Blue Prince*, where se
 - Decoding each group produces a letter, and concatenating these produces the decoded word.
 - Multiple words on a line are decoded and concatenated to produce the final decoded output.
 
-This algorithm is a direct adaptation of the puzzle logic found in *Blue Prince*, a game that blends number puzzles and roguelite elements where players decode sequences using arithmetic operations under constraints.
+This algorithm is a direct adaptation of the puzzle logic found in *Blue Prince*, a game that blends puzzles and roguelite elements.
 
 ## Files
 
 - `numeric_core_debug.py` — Outputs detailed intermediate steps showing letter-to-number conversion, groups, operations tried, and results.
-- `numeric_core_simple.py` — Outputs only the final decoded letters per input line, for easier use.
+- `numeric_core.py` — Outputs only the final decoded letters per input line, for easier use.
 
 ## Usage
 
-Run either script with an input filename as argument:
+Run either script with an input filename as argument. The following examples assume the `txt` file is in the same directory as the `py` file.
 
 ```bash
 python numeric_core_debug.py input.txt
-python numeric_core_simple.py input.txt
+python numeric_core.py input.txt
+````
+
+`input.txt` should contain lines of words to decode.
+
+## Example
+
+Given `input.txt` containing:
+
+```
+HAND TOAD
+```
+
+Output (debug version):
+
+```
+Processing word: HAND
+ Letter-to-number conversion: [8, 1, 14, 4]
+  Group of 4: [8, 1, 14, 4]
+    → Best ops: ('-', '/', '*') → Result: 2
+    → Numeric Core: 2 → Letter: B
+Processing word: TOAD
+ Letter-to-number conversion: [20, 15, 1, 4]
+  Group of 4: [20, 15, 1, 4]
+    → Best ops: ('-', '*', '/') → Result: 9
+    → Numeric Core: 9 → Letter: I
+Decoded line: BI
+```
+
+Simplified version outputs:
+
+```
+BI
+```
+
+## Requirements
+
+* Python 3.6+
+* No external dependencies
+
+## License
+
+MIT License
+
+---
