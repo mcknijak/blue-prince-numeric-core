@@ -10,7 +10,7 @@ Simplified version of numeric core decoding:
 - No intermediate debug output, just decoded result
 
 Usage:
-    python numeric_core_simple.py input.txt
+    python numericCore.py input.txt
 """
 
 import sys
