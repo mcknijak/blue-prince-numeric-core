@@ -83,7 +83,7 @@ def process_line(line):
 def main():
     """Main function to process file from command line."""
     if len(sys.argv) != 2:
-        print("Usage: python numeric_core_simple.py inputfile.txt")
+        print("Usage: python numericCore.py inputfile.txt")
         sys.exit(1)
 
     filename = sys.argv[1]
